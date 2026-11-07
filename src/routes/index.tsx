@@ -1,23 +1,51 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/site/Navbar";
+import {
+  Hero,
+  About,
+  FeaturedDishes,
+  Gallery,
+  Atmosphere,
+  Contact,
+  Footer,
+} from "@/components/site/Sections";
+import { useReveal } from "@/hooks/use-reveal";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Doğuş Lokantası | Sivas – Türk Mutfağı (Konsept)" },
+      {
+        name: "description",
+        content:
+          "Doğuş Lokantası için hazırlanmış resmi olmayan konsept web sitesi: Sivas'ta zarif bir Türk mutfağı deneyimi.",
+      },
+      { property: "og:title", content: "Doğuş Lokantası | Sivas" },
+      {
+        property: "og:description",
+        content: "Sivas'ta Türk mutfağının sıcaklığını zarif bir atmosferle buluşturan lokanta konsepti.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
+  useReveal();
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main>
+        <Hero />
+        <About />
+        <FeaturedDishes />
+        <Gallery />
+        <Atmosphere />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
