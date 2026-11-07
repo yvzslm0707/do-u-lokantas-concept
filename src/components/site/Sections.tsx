@@ -114,7 +114,7 @@ export function About() {
             {[
               { k: "Mutfak", v: "Türk" },
               { k: "Şehir", v: "Sivas" },
-              { k: "Ortam", v: "Aile dostu*" },
+              { k: "Tür", v: "Lokanta" },
             ].map((s) => (
               <div key={s.k}>
                 <p className="font-display text-2xl text-primary md:text-3xl">{s.v}</p>
@@ -122,7 +122,6 @@ export function About() {
               </div>
             ))}
           </div>
-          <p className="mt-3 text-xs text-muted-foreground/80">* Doğrulanması gereken bilgi</p>
         </div>
       </div>
     </section>
@@ -320,13 +319,13 @@ export function Atmosphere() {
               }
             />
             <p className="reveal mt-8 font-light leading-relaxed text-charcoal-foreground/80 md:text-lg">
-              Bordo tonlar, yumuşak ışıklar ve özenle kurulmuş masalarla; aile yemeklerinden özel
-              buluşmalara kadar her ana eşlik edecek bir ortam tasarımı.
+              Bordo tonlar, yumuşak ışıklar ve özenle kurulmuş masalarla sofrayı bir buluşma
+              anına dönüştürmeyi amaçlayan bir ortam tasarımı.
             </p>
             <ul className="reveal mt-10 space-y-4">
               {[
-                "Aile ve dost sofraları",
-                "Özel günler ve kutlamalar",
+                "Sıcak ve zarif iç mekân",
+                "Özenle kurulmuş masalar",
                 "[Salon kapasitesi ve ek hizmetler eklenecek]",
               ].map((t) => (
                 <li key={t} className="flex items-center gap-4 text-charcoal-foreground">
