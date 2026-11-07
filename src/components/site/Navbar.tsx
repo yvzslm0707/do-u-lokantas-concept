@@ -45,6 +45,7 @@ export function Navbar() {
   }, [open]);
 
   return (
+    <>
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
@@ -90,10 +91,11 @@ export function Navbar() {
           {open ? <X className="size-7" /> : <Menu className="size-7" />}
         </button>
       </nav>
+    </header>
 
       <div
         className={cn(
-          "fixed inset-x-0 bottom-0 top-[64px] bg-charcoal transition-all duration-500 lg:hidden",
+          "fixed inset-x-0 bottom-0 top-[64px] z-40 bg-charcoal transition-all duration-500 lg:hidden",
           open ? "visible opacity-100" : "invisible opacity-0",
         )}
       >
@@ -121,6 +123,6 @@ export function Navbar() {
           ))}
         </ul>
       </div>
-    </header>
+    </>
   );
 }

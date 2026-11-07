@@ -199,7 +199,7 @@ const GALLERY = [
   { src: dish3, alt: "Fıstıklı baklava", w: 1024, h: 1280, span: "" },
   { src: gallery3, alt: "Bakır fincanda Türk kahvesi ve lokum", w: 1024, h: 1024, span: "" },
   { src: dish1, alt: "Toprak güveçte yemek", w: 1024, h: 1280, span: "" },
-  { src: hero, alt: "Mum ışığında Türk sofrası", w: 1920, h: 1088, span: "md:col-span-2" },
+  { src: hero, alt: "Mum ışığında Türk sofrası", w: 1920, h: 1088, span: "md:col-span-1" },
 ];
 
 export function Gallery() {
