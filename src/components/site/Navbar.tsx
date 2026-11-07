@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import { Logo } from "./Ornament";
 
 export const NAV_LINKS = [
@@ -76,12 +77,9 @@ export function Navbar() {
             ))}
           </ul>
 
-          <a
-            href="#iletisim"
-            className="hidden border border-gold/60 px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.25em] text-gold transition-all duration-500 hover:bg-gold hover:text-charcoal lg:inline-block"
-          >
-            Rezervasyon
-          </a>
+          <Button asChild variant="gold" size="md" className="hidden lg:inline-flex">
+            <a href="#iletisim">Rezervasyon</a>
+          </Button>
 
           <button
             type="button"
@@ -101,7 +99,7 @@ export function Navbar() {
           open ? "visible opacity-100" : "invisible opacity-0",
         )}
       >
-        <ul className="flex h-full flex-col items-center justify-center gap-7">
+        <ul className="flex h-full flex-col items-center justify-center gap-6 px-6">
           {NAV_LINKS.map((l, i) => (
             <li
               key={l.href}
@@ -123,6 +121,19 @@ export function Navbar() {
               </a>
             </li>
           ))}
+          <li
+            className={cn(
+              "mt-4 w-full max-w-xs transition-all duration-500",
+              open ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0",
+            )}
+            style={{ transitionDelay: open ? `${NAV_LINKS.length * 60 + 100}ms` : "0ms" }}
+          >
+            <Button asChild variant="gold" size="xl" className="w-full">
+              <a href="#iletisim" onClick={() => setOpen(false)}>
+                Rezervasyon
+              </a>
+            </Button>
+          </li>
         </ul>
       </div>
     </>
