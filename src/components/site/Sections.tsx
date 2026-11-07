@@ -400,7 +400,7 @@ export function Contact() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
-            <div className="eyebrow absolute left-4 top-4 bg-charcoal px-3 py-2 text-[0.6rem] text-charcoal-foreground">
+            <div className="eyebrow absolute bottom-4 left-4 bg-charcoal px-3 py-2 text-[0.6rem] text-charcoal-foreground">
               Konum: Sivas (kesin adres eklenecek)
             </div>
           </div>
