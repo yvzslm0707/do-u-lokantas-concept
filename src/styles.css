@@ -108,6 +108,7 @@
   --gradient-burgundy: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-deep) 100%);
   --shadow-elegant: 0 30px 60px -30px color-mix(in oklab, var(--charcoal) 55%, transparent);
   --shadow-burgundy: 0 20px 40px -20px color-mix(in oklab, var(--burgundy) 60%, transparent);
+  --shadow-glow: 0 40px 70px -35px color-mix(in oklab, var(--gold) 40%, transparent);
 
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
@@ -147,10 +148,11 @@
     font-family: var(--font-display);
     font-weight: 500;
     letter-spacing: -0.01em;
+    text-wrap: balance;
   }
 
   section[id] {
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 4.5rem;
   }
 
   ::selection {
@@ -183,6 +185,17 @@
   box-shadow: var(--shadow-burgundy);
 }
 
+@utility shadow-glow {
+  box-shadow: var(--shadow-glow);
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* Scroll reveal */
 @utility reveal {
   opacity: 0;
@@ -194,6 +207,35 @@
     opacity: 1;
     transform: none;
   }
+}
+
+/* Direction modifiers — combine with .reveal */
+@utility reveal-left {
+  &:not(.is-visible) {
+    transform: translateX(-48px);
+  }
+}
+
+@utility reveal-right {
+  &:not(.is-visible) {
+    transform: translateX(48px);
+  }
+}
+
+@utility reveal-scale {
+  &:not(.is-visible) {
+    transform: scale(0.94);
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility animate-marquee {
+  animation: marquee 45s linear infinite;
 }
 
 @keyframes hero-zoom {
@@ -246,7 +288,8 @@
   }
   .reveal,
   .animate-hero-zoom,
-  .animate-fade-up {
+  .animate-fade-up,
+  .animate-marquee {
     opacity: 1 !important;
     transform: none !important;
     animation: none !important;
