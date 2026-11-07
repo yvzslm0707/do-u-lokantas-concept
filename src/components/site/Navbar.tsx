@@ -46,52 +46,54 @@ export function Navbar() {
 
   return (
     <>
-    <header
-      className={cn(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled || open
-          ? "border-b border-charcoal-foreground/10 bg-charcoal/95 py-3 backdrop-blur-md"
-          : "bg-transparent py-6",
-      )}
-    >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-10">
-        <Logo />
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+          scrolled || open
+            ? "border-b border-charcoal-foreground/10 bg-charcoal/95 py-3 backdrop-blur-md"
+            : "bg-transparent py-6",
+        )}
+      >
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-10">
+          <Logo />
 
-        <ul className="hidden items-center gap-9 lg:flex">
-          {NAV_LINKS.map((l) => (
-            <li key={l.href}>
-              <a
-                href={l.href}
-                className={cn(
-                  "relative py-2 text-[0.78rem] uppercase tracking-[0.2em] transition-colors duration-300",
-                  "after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-500 hover:text-gold hover:after:scale-x-100",
-                  active === l.href ? "text-gold after:scale-x-100" : "text-charcoal-foreground/85",
-                )}
-              >
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          <ul className="hidden items-center gap-9 lg:flex">
+            {NAV_LINKS.map((l) => (
+              <li key={l.href}>
+                <a
+                  href={l.href}
+                  className={cn(
+                    "relative py-2 text-[0.78rem] uppercase tracking-[0.2em] transition-colors duration-300",
+                    "after:absolute after:inset-x-0 after:-bottom-0.5 after:h-px after:origin-left after:scale-x-0 after:bg-gold after:transition-transform after:duration-500 hover:text-gold hover:after:scale-x-100",
+                    active === l.href
+                      ? "text-gold after:scale-x-100"
+                      : "text-charcoal-foreground/85",
+                  )}
+                >
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-        <a
-          href="#iletisim"
-          className="hidden border border-gold/60 px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.25em] text-gold transition-all duration-500 hover:bg-gold hover:text-charcoal lg:inline-block"
-        >
-          Rezervasyon
-        </a>
+          <a
+            href="#iletisim"
+            className="hidden border border-gold/60 px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.25em] text-gold transition-all duration-500 hover:bg-gold hover:text-charcoal lg:inline-block"
+          >
+            Rezervasyon
+          </a>
 
-        <button
-          type="button"
-          onClick={() => setOpen((v) => !v)}
-          className="text-charcoal-foreground lg:hidden"
-          aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
-          aria-expanded={open}
-        >
-          {open ? <X className="size-7" /> : <Menu className="size-7" />}
-        </button>
-      </nav>
-    </header>
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="text-charcoal-foreground lg:hidden"
+            aria-label={open ? "Menüyü kapat" : "Menüyü aç"}
+            aria-expanded={open}
+          >
+            {open ? <X className="size-7" /> : <Menu className="size-7" />}
+          </button>
+        </nav>
+      </header>
 
       <div
         className={cn(
