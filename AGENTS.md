@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- The site is a single scrolling page (`src/routes/index.tsx`) with in-page `#section` anchors, because the user asked for smooth scrolling between sections; section components live in `src/components/site/`.
+- Scroll-in animations use the `.reveal` utility plus the `useReveal` hook, so new sections should reuse them instead of adding an animation library.
