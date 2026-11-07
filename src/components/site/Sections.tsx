@@ -280,8 +280,8 @@ export function Gallery() {
             <X className="size-8" />
           </button>
           <img
-            src={GALLERY[openIdx].src}
-            alt={GALLERY[openIdx].alt}
+            src={GALLERY[openIdx]?.src}
+            alt={GALLERY[openIdx]?.alt ?? ""}
             className="animate-in zoom-in-95 max-h-[85vh] max-w-full object-contain duration-500"
             onClick={(e) => e.stopPropagation()}
           />
