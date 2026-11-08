@@ -507,7 +507,7 @@ export function Contact() {
         />
 
         <div className="mt-10 grid gap-8 md:mt-14 lg:grid-cols-5 lg:gap-10">
-          <div className="reveal reveal-left lg:col-span-2">
+          <div className="reveal lg:reveal-left lg:col-span-2">
             <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
               {CONTACT_ITEMS.map(({ icon: Icon, label, value }) => (
                 <div
@@ -542,7 +542,7 @@ export function Contact() {
             </Button>
           </div>
 
-          <div className="reveal reveal-right group shadow-elegant relative min-h-[320px] overflow-hidden border border-border transition-colors duration-500 hover:border-gold/70 sm:min-h-[400px] lg:col-span-3">
+          <div className="reveal lg:reveal-right group shadow-elegant relative min-h-[320px] overflow-hidden border border-border transition-colors duration-500 hover:border-gold/70 sm:min-h-[400px] lg:col-span-3">
             <iframe
               title="Sivas haritası"
               src="https://www.google.com/maps?q=Sivas,T%C3%BCrkiye&z=13&output=embed"

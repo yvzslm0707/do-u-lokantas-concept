@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   useReveal();
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-clip bg-background">
       <Navbar />
       <main>
         <Hero />
