@@ -85,7 +85,7 @@ export function SectionHeading({
 }
 
 /** Diamond seam that sits on the border between two sections. */
-export function SectionSeam({ tone = "dark" }: { tone?: "light" | "dark" }) {
+export function SectionSeam({ tone = "dark" }: { tone?: "light" | "dark" | "burgundy" }) {
   return (
     <div
       aria-hidden
@@ -94,7 +94,7 @@ export function SectionSeam({ tone = "dark" }: { tone?: "light" | "dark" }) {
       <div
         className={cn(
           "flex size-10 rotate-45 items-center justify-center border border-gold/60",
-          tone === "dark" ? "bg-background" : "bg-charcoal",
+          tone === "dark" ? "bg-background" : tone === "burgundy" ? "bg-primary-deep" : "bg-charcoal",
         )}
       >
         <span className="size-2 bg-gold" />
