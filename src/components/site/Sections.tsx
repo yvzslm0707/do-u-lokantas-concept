@@ -66,7 +66,7 @@ export function Hero() {
       {/* Thin gold frame with diamond corners */}
       <div
         aria-hidden
-        className="animate-fade-up pointer-events-none absolute inset-x-3 bottom-3 top-[96px] z-[1] border border-gold/35 sm:inset-x-5 sm:bottom-5 lg:inset-x-8 lg:bottom-8 lg:top-[108px]"
+        className="animate-fade-up pointer-events-none absolute inset-x-3 bottom-3 top-[96px] z-20 border border-gold/35 sm:inset-x-5 sm:bottom-5 lg:inset-x-8 lg:bottom-8 lg:top-[108px]"
         style={{ animationDelay: "0.2s" }}
       >
         {["-left-1 -top-1", "-right-1 -top-1", "-bottom-1 -left-1", "-bottom-1 -right-1"].map(
@@ -283,7 +283,7 @@ export function FeaturedDishes() {
               style={{ transitionDelay: `${i * 120}ms` }}
             >
               <article className="group relative flex h-full flex-col border border-charcoal-foreground/10 bg-charcoal-soft transition-[translate,border-color,box-shadow] duration-500 ease-out hover:-translate-y-1.5 hover:border-gold/60 hover:shadow-glow">
-                <div className="relative aspect-[4/3] overflow-hidden lg:aspect-[4/5]">
+                <div className="relative aspect-[4/3] overflow-hidden lg:aspect-[5/6]">
                   <img
                     src={d.img}
                     alt={d.alt}
