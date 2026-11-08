@@ -120,7 +120,7 @@ export function Hero() {
 
         {/* Compact info strip */}
         <dl
-          className="animate-fade-up grid grid-cols-3 border-t border-gold/30 bg-charcoal/40 backdrop-blur-sm"
+          className="animate-fade-up -mx-3 grid grid-cols-3 border-t border-gold/30 bg-charcoal/40 backdrop-blur-sm sm:-mx-5 lg:-mx-8"
           style={{ animationDelay: "1.3s" }}
         >
           {HERO_FACTS.map((f, i) => (
@@ -433,14 +433,16 @@ export function Atmosphere() {
       <SectionSeam tone="burgundy" />
       <div className="grid lg:grid-cols-2">
         <div className="group relative min-h-[280px] overflow-hidden sm:min-h-[380px] lg:min-h-[640px]">
-          <img
-            src={interior}
-            alt="Bordo kadife sandalyeler ve sıcak ışıklarla zarif bir yemek salonu"
-            width={1120}
-            height={1072}
-            loading="lazy"
-            className="reveal reveal-scale absolute inset-0 h-full w-full object-cover transition-[scale] duration-[1.6s] ease-out group-hover:scale-105"
-          />
+          <div className="reveal reveal-scale absolute inset-0">
+            <img
+              src={interior}
+              alt="Bordo kadife sandalyeler ve sıcak ışıklarla zarif bir yemek salonu"
+              width={1120}
+              height={1072}
+              loading="lazy"
+              className="h-full w-full object-cover transition-transform duration-[1.6s] ease-out group-hover:scale-105"
+            />
+          </div>
           <HoverFrame className="inset-5 group-hover:inset-6" />
         </div>
         <div className="flex items-center px-6 py-14 sm:px-10 sm:py-16 lg:px-16 lg:py-20">
