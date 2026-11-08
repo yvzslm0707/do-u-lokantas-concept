@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/site/Navbar";
 import {
   Hero,
+  WordBand,
   About,
   FeaturedDishes,
   Gallery,
@@ -35,10 +36,11 @@ export const Route = createFileRoute("/")({
 function Index() {
   useReveal();
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-clip bg-background">
       <Navbar />
       <main>
         <Hero />
+        <WordBand />
         <About />
         <FeaturedDishes />
         <Gallery />
